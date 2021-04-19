@@ -21,7 +21,7 @@ public class PaymentController {
     PaymentService paymentService;
 
     @RequestMapping(value = "/payment/create", method = RequestMethod.POST)
-    public CommonResult<Payment> create(Payment payment){ //埋雷
+    public CommonResult<Payment> create(@RequestBody Payment payment){ //埋雷
         int result = paymentService.create(payment);
         log.info("*****插入结果："+result);
         if (result>0){  //成功
